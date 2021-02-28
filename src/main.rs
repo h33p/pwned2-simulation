@@ -250,13 +250,7 @@ unsafe fn unsafe_main() {
 
         if success {
             println!("Success!!!");
-
-            for &k in &key {
-                print!("{}", k as char);
-            }
-
-            println!();
-
+            println!("{}", std::str::from_utf8(&key).unwrap());
             break;
         } else {
             println!("KEY FAILED {}", std::str::from_utf8(&key).unwrap());
